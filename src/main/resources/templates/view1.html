@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>This is the registration page: </h3>
+    <form th:action="@{/register}" method="POST" th:object="${formData}">
+        <table>
+            
+            <tr>
+                <td><label for="name">Name:</label></td>
+                <td>
+                    <input type="text" id="name" name="name" th:field="*{name}">
+                    <!-- Display validation error message for name -->
+                    <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="error"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="dob">Date of Birth:</label></td>
+                <td>
+                    <input type="date" id="dob" name="dob" th:field="*{dob}">
+                    <!-- Display validation error message for dob -->
+                    <span th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" class="error"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td>
+                    <input type="text" id="email" name="email" th:field="*{email}">
+                    <!-- Display validation error message for name -->
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="error"></span>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td><label for="mobileNumber">Mobile No:</label></td>
+                <td>
+                    <input type="text" id="mobileNumber" name="mobileNumber" th:field="*{mobileNumber}">
+                    <!-- Display validation error message for age -->
+                    <span th:if="${#fields.hasErrors('mobileNumber')}" th:errors="*{mobileNumber}" class="error"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="gender">Gender:</label></td>
+                <td>
+                    <select id="gender" name="gender" th:field="*{gender}">
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    <!-- Display validation error message for gender -->
+                    <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" class="error"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><label for="numberOfTickets">Number of tickets:</label></td>
+                <td>
+                    <input type="number" id="numberOfTickets" name="numberOfTickets" th:field="*{numberOfTickets}">
+                    <!-- Display validation error message for age -->
+                    <span th:if="${#fields.hasErrors('numberOfTickets')}" th:errors="*{numberOfTickets}" class="error"></span>
+                </td>
+            </tr>
+
+
+            <!-- Submit button -->
+            <tr>
+                <td colspan="2"><button type="submit">Register</button></td>
+            </tr>
+        </table>
+    </form>
+    <!-- Form ends here -->
+
+</body>
+
+</html>

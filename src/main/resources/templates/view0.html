@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View 0</title>
+</head>
+
+<body>
+
+    <h3>List of Events:</h3>
+
+    <!-- <div data-th-if="${#lists.isEmpty(announcements)}">
+        <h4>There are no events for registration</h4>
+    </div>
+
+    <div data-th-unless="${#lists.isEmpty(announcements)}"> -->
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Event ID</th>
+                    <th>Event Name</th>
+                    <th>Event Size</th>
+                    <th>Event Date</th>
+                    <th>Participants</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-th-each="i: ${event1}">
+                    <td><span data-th-text="${i.eventId}"></span></td>
+                    <td><span data-th-text="${i.eventName}"></span></td>
+                    <td><span data-th-text="${i.eventSize}"></span></td>
+                    <td><span data-th-text="${i.eventDate}"></span></td>
+                    <td><span data-th-text="${i.participants}"></span></td>
+                    <td>
+                        <form th:action="@{/register}" method="post">
+                            <input type="hidden" name="eventId" th:value="${i.eventId}" />
+                            <button type="submit">Register</button>
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</body>
+
+</html>
