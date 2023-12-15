@@ -39,7 +39,6 @@ public class FormData {
     @NotBlank(message = "Gender is required")
     private String gender;
 
-    @NotBlank(message = "Input is required")
     @Min(value = 1, message= "At least 1 ticket required")
     @Max(value = 3, message= "Max 3 tickets allowed")
     private int numberOfTickets;

@@ -2,8 +2,10 @@ package vttp.ssf.assessment.eventmanagement.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import vttp.ssf.assessment.eventmanagement.repositories.RedisRepository;
@@ -28,5 +30,15 @@ public class EventController {
 		return mav;
 	}
 
-	
+	// @GetMapping("/register")
+    // public ModelAndView registerPage(@RequestParam MultiValueMap<String, Integer> params) {
+    //     ModelAndView mav = new ModelAndView("eventregister");
+    //     Integer eventId = params.getFirst("eventId");
+    //     // List<Event> events = redisRepo.getEvent(eventId);
+
+    //     mav.addObject("eventId", eventId);
+
+    //     return mav;
+
+	// }
 }
