@@ -25,7 +25,7 @@ public class DatabaseService {
                 // Reads the Json array
                 JsonArray arr = reader.readArray();
 
-                // Mapping each JASON object to an Event object:
+                // Mapping each JSON object to an Event object:
                 events = arr.stream()
                         .map(j -> j.asJsonObject())
                         .map(o -> {

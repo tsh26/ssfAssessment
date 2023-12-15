@@ -29,7 +29,6 @@ public class RegistrationController {
         return "eventregister";
     }
     
-
 // TODO: Task 7
     @PostMapping("/submit-form")
     public String processRegistration(@Valid FormData formData, BindingResult bindingResult) {
@@ -37,7 +36,9 @@ public class RegistrationController {
             return "eventregister"; // Return back to form page but with error messages
         }
         // else if
-        // Process the form data (save to Redis) if server side validation passes
+        // Process the form data (save to Redis) if server side validation passes.
+        // Applicants must be >= 21 years old
+        // noOfTickets <= participants count & eventSize
 
         return "SuccessRegistration"; // Redirect to a success page
 
