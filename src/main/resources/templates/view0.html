@@ -22,7 +22,6 @@
                     <th>Event Name</th>
                     <th>Event Size</th>
                     <th>Event Date</th>
-                    <th>Participants</th>
                     <th>Action</th>
                 </tr>
             </thead>
@@ -31,10 +30,45 @@
                     <td><span data-th-text="${i.eventId}"></span></td>
                     <td><span data-th-text="${i.eventName}"></span></td>
                     <td><span data-th-text="${i.eventSize}"></span></td>
-                    <td><span data-th-text="${i.eventDate}"></span></td>
-                    <td><span data-th-text="${i.participants}"></span></td>
+                    <td><span data-th-text="${#dates.format(new java.util.Date(i.eventDate), 'dd-MM-yyyy')}"></span></td>
                     <td>
-                        <form th:action="@{/register}" method="post">
+                        <form th:action="@{/events/register}" method="GET">
+                            <input type="hidden" name="eventId" th:value="${i.eventId}" />
+                            <button type="submit">Register</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr data-th-each="i: ${event2}">
+                    <td><span data-th-text="${i.eventId}"></span></td>
+                    <td><span data-th-text="${i.eventName}"></span></td>
+                    <td><span data-th-text="${i.eventSize}"></span></td>
+                    <td><span data-th-text="${#dates.format(new java.util.Date(i.eventDate), 'dd-MM-yyyy')}"></span></td>
+                    <td>
+                        <form th:action="@{/events/register}" method="GET">
+                            <input type="hidden" name="eventId" th:value="${i.eventId}" />
+                            <button type="submit">Register</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr data-th-each="i: ${event3}">
+                    <td><span data-th-text="${i.eventId}"></span></td>
+                    <td><span data-th-text="${i.eventName}"></span></td>
+                    <td><span data-th-text="${i.eventSize}"></span></td>
+                    <td><span data-th-text="${#dates.format(new java.util.Date(i.eventDate), 'dd-MM-yyyy')}"></span></td>
+                    <td>
+                        <form th:action="@{/events/register}" method="GET">
+                            <input type="hidden" name="eventId" th:value="${i.eventId}" />
+                            <button type="submit">Register</button>
+                        </form>
+                    </td>
+                </tr>
+                <tr data-th-each="i: ${event4}">
+                    <td><span data-th-text="${i.eventId}"></span></td>
+                    <td><span data-th-text="${i.eventName}"></span></td>
+                    <td><span data-th-text="${i.eventSize}"></span></td>
+                    <td><span data-th-text="${#dates.format(new java.util.Date(i.eventDate), 'dd-MM-yyyy')}"></span></td>
+                    <td>
+                        <form th:action="@{/events/register}" method="GET">
                             <input type="hidden" name="eventId" th:value="${i.eventId}" />
                             <button type="submit">Register</button>
                         </form>

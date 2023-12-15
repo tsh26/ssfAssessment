@@ -35,10 +35,9 @@ public class RedisRepository {
 	}
 
 	// TODO: Task 4
-	public Event getEvent(Integer index) {
-		Event specificEvent = events.get(index);
+	public Event getEvent(int eventId) {
+		Event specificEvent = events.get(eventId);
 		
 		return specificEvent;
 	}
-
 }
